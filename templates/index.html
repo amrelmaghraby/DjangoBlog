@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<h1>List of All Posts</h1>
+<!--<form method="GET" action="">-->
+<!--<input type="text" name="q" value={{ request.GET.q }}  placeholder="Search posts"/>-->
+    <!--<input type="submit"  value="search"/>-->
+<!--</form>-->
+<form type="get" action="." >
+    <input  id="search" type="text" name="search"  placeholder="Search..." >
+    <button id="search_submit" type="submit" >Submit</button>
+</form>
+
+<body>
+
+{% for obj in object_list %}
+<a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><br/>
+Title: {{obj.title}}<br/>
+Body: {{obj.body}}<br/>
+<br/>
+{% endfor %}
+<a href="/posts/create/">Create Post</a><br/>
+<a href="/logout/">logout</a><br/>
+
+</body>
+
+</html>

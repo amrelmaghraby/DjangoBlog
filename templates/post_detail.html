@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Title: {{ instance.title}}</h1>
+Author: {{instance.user}}<br/>
+Body:   {{instance.body}}<br/>
+{% if instance.user == request.user%}
+    <a href="edit/">edit</a><br/>
+    <a href="delete/">delete</a><br/>
+{%endif%}
+<a href="/posts/">main page</a><br/>
+</body>
+</html>
